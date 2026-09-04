@@ -19,7 +19,7 @@ void Game::Reset()
 	ball.color = ConsoleColor::Cyan;
 	ResetBall();
 
-	// TODO #2 - Add this brick and 4 more bricks to the vector
+	// TODO #2 - Add this brick and 4 more bricks to the vector :)
 	
 	gameState = 0;
 	bricks.clear();
@@ -44,8 +44,7 @@ void Game::Reset()
 			mBrick.color = ConsoleColor::DarkCyan;
 			bricks.push_back(mBrick);
 		}
-		std::string startText = "press 'SPACE' to start..";
-		Console::WordWrap(WINDOW_WIDTH / 2 - (strlen(startText.c_str()) / 2), WINDOW_HEIGHT / 2, 1, startText.c_str());
+
 }
 
 void Game::ResetBall()
@@ -103,7 +102,8 @@ void Game::Render() const
 		Console::WordWrap(WINDOW_WIDTH / 2 - (strlen(victoryText.c_str()) / 2), WINDOW_HEIGHT / 2, 1, victoryText.c_str());
 	}
 	else if (!ball.moving && gameState == 0) {
-		
+		std::string startText = "press 'SPACE' to start..";
+		Console::WordWrap(WINDOW_WIDTH / 2 - (strlen(startText.c_str())/2), WINDOW_HEIGHT / 2, 1, startText.c_str());
 	}
 }
 
